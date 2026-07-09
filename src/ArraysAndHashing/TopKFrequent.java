@@ -16,6 +16,7 @@ public class TopKFrequent {
         // actually contains the correct object type because java uses type erasure
         // warnig - occurs when you assign a raw, untyped list to a parameteresized generic List<type>
         List<Integer>[] buckets = new List[nums.length + 1];
+
         for (int i = 0; i < buckets.length; i++) {
             buckets[i] = new ArrayList<>();
         }
