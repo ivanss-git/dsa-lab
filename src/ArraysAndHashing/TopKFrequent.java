@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Arrays;
 
 public class TopKFrequent {
+    @SuppressWarnings("unchecked")
     public int[] solution (int[] nums, int k) {
         HashMap<Integer, Integer> hm = new HashMap<>();
         for (int num : nums) {
