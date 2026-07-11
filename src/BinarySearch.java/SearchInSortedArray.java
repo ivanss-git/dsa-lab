@@ -44,7 +44,7 @@ public class SearchInSortedArray {
         int[] example = {3,4,5,6,1,2};
         int target = 1;
         SearchInSortedArray sisa = new SearchInSortedArray();
-        System.out.printf("Output: ", sisa.search(example, target));
+        System.out.print("Output: " + sisa.search(example, target));
 
    } 
 }

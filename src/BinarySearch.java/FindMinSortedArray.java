@@ -25,7 +25,7 @@ public class FindMinSortedArray {
     public static void main (String[] args) {
         int[] example = {3,4,5,6,1,2};
         FindMinSortedArray msa = new FindMinSortedArray();
-        System.out.printf("Output: ", msa.new Solution().findMin(example));
+        System.out.print("Output: "+ msa.new Solution().findMin(example));
 
     }
     
