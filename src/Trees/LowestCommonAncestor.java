@@ -39,3 +39,11 @@ public class LowestCommonAncestor {
 
     }
 }
+
+// root is always common ancestor of every single node in the tree, 
+// but necessarily the lowest
+// a node cannot be an ancestor of another if in a different subtree
+// if there is a split, the lca is where the split of p & q occurs
+// if a node is = to the root, that is the lca
+// O(log n) since you only visit nodes in level, not entire tree
+// memory complexity (space) is O(1) since we don't use any big DSs or anything
