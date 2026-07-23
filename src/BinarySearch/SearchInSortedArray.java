@@ -1,3 +1,4 @@
+package BinarySearch;
 
 public class SearchInSortedArray {
     public int search(int[] nums, int target) {
