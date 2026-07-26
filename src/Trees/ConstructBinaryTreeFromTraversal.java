@@ -56,7 +56,7 @@ public class ConstructBinaryTreeFromTraversal {
 
         if (root == null) { return;}
 
-        System.out.print(root.val + " ");
+        System.out .print(root.val + " ");
         printTree(root.left);
         printTree(root.right);
     }
