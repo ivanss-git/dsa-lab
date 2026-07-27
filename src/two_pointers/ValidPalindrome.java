@@ -1,4 +1,5 @@
 package two_pointers;
+import utils.MyClass;
 
 public class ValidPalindrome {
     public boolean isPalindrome(String s) {
@@ -8,12 +9,14 @@ public class ValidPalindrome {
                 newStr.append(Character.toLowerCase(c));
             }
         }
-        return newStr.toString().equals(newStr.reverse().toString());
+        String original = newStr.toString();
+        String reversed = newStr.reverse().toString();
+        return original.equals(reversed);
     }
     public static void main (String[] args) {
         ValidPalindrome vp = new ValidPalindrome();
         String str = "ama";
-        System.out.printf("The String " + str + " is a palindrome: %s" , vp.isPalindrome(str));
+        MyClass.log("The String " + str + " is a palindrome: %s" + vp.isPalindrome(str));
     }
     
 }

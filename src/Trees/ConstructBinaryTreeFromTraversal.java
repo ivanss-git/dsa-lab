@@ -1,7 +1,6 @@
 package trees;
 
 import java.util.HashMap;
-
 public class ConstructBinaryTreeFromTraversal {
 
     public static class TreeNode {
@@ -43,6 +42,8 @@ public class ConstructBinaryTreeFromTraversal {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
 
+        preorderIndex = 0;
+
         // loop through inorder to map the index and value
         for (int i = 0; i < inorder.length; i++) {
             inorderMap.put(inorder[i], i);
@@ -56,7 +57,7 @@ public class ConstructBinaryTreeFromTraversal {
 
         if (root == null) { return;}
 
-        System.out .print(root.val + " ");
+        System.out.print(root.val + " ");
         printTree(root.left);
         printTree(root.right);
     }
@@ -66,8 +67,9 @@ public class ConstructBinaryTreeFromTraversal {
         int[] preorder = {1,2,3,4};
         int[] inorder = {2,1,3,4};
         TreeNode output = cbt.buildTree(preorder,inorder);
+        
         System.out.print("Output: ");
         printTree(output);
-
+        System.out.println();
     }
 }

@@ -3,6 +3,7 @@ package trees;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import utils.MyClass;
 
 public class SerializeAndDeserialize {
 
@@ -69,11 +70,11 @@ public class SerializeAndDeserialize {
 
         // Test serialize
         String serialized = codec.serialize(root);
-        System.out.println("Serialized: " + serialized);
+        MyClass.log("Serialized: " + serialized);
         
         // Test deserialize
         TreeNode deserializedRoot = codec.deserialize(serialized);
         String reserialized = codec.serialize(deserializedRoot);
-        System.out.println("Re-serialized: " + reserialized);
+        MyClass.log("Re-serialized: " + reserialized);
     }
 }

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.HashSet;
-
+import utils.MyClass;
 public class ThreeSum {
     public class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
@@ -26,7 +26,7 @@ public class ThreeSum {
                         res.add(Arrays.asList(nums[i], nums[l], nums[r]));
                         l++;
                         r--;
-                        while (l < r && nums[i] == nums[l - 1]) {
+                        while (l < r && nums[l] == nums[l - 1]) {
                             l++;
                         }
                     }
@@ -38,8 +38,6 @@ public class ThreeSum {
     public static void main (String[] args) {
         int[] example = {-1,0,1,2,-1,-4};
         ThreeSum ts = new ThreeSum();
-        System.out.printf("Output: ",ts.new Solution().threeSum(example));
-
+       MyClass.log("Output:" + ts.new Solution().threeSum(example));
     }
-    
 }

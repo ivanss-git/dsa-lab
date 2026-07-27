@@ -1,4 +1,5 @@
 package trees;
+import utils.MyClass;
 
 public class SubtreeOfAnother {
 
@@ -44,6 +45,6 @@ public class SubtreeOfAnother {
         // construct the subtree and print result
         TreeNode subRoot = new TreeNode(2, new TreeNode(4), new TreeNode(5));
         boolean result = soa.isSubtree(root, subRoot);
-        System.out.print(result);
+        MyClass.log(result);
     }
 }

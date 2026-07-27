@@ -1,5 +1,6 @@
 package two_pointers;
 
+import utils.MyClass;
 public class ContainerWithMostWater {
     public class Solution {
         public int maxArea(int[] heights) {
@@ -20,7 +21,7 @@ public class ContainerWithMostWater {
     public static void main (String[] args) {
         ContainerWithMostWater cwmw = new ContainerWithMostWater();
         int[] example = {1,7,2,5,4,7,3,6};
-        System.out.printf("Output:", cwmw.new Solution().maxArea(example));
+        MyClass.log("Output:" + cwmw.new Solution().maxArea(example));
 
     }
     
