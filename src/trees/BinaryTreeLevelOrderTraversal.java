@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import utils.MyClass;
+
 public class BinaryTreeLevelOrderTraversal {
     public static class TreeNode {
         int val;
@@ -23,7 +25,7 @@ public class BinaryTreeLevelOrderTraversal {
         List<List<Integer>> list = new ArrayList<>();
         Queue<TreeNode> q = new LinkedList<>();
 
-        if (root == null) { return null;}
+        if (root == null) { return list;}
 
         // initialize queue to the root of BT by inserting it if possible
         q.offer(root);
@@ -55,6 +57,6 @@ public class BinaryTreeLevelOrderTraversal {
         root.right = new TreeNode(3, new TreeNode(6), new TreeNode(7));
 
         List<List<Integer>> output = btlot.levelOrder(root);
-        System.out.print(output);
+        MyClass.log(output);
     }
 }

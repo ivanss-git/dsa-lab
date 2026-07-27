@@ -1,4 +1,5 @@
 package trees;
+
 import utils.MyClass;
 
 public class SubtreeOfAnother {
