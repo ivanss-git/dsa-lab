@@ -1,27 +1,50 @@
 package utils;
 
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
-public class MyClass {
-    private MyClass() {
-        /* This utility class should not be instantiated */
+/**
+ * Utility logger to replace System.out.println and pass code quality checks.
+ */
+public final class MyClass {
+
+    // Prevent instantiation of this utility class
+    private MyClass() { 
+        throw new UnsupportedOperationException("Utility class"); 
     }
 
     // Class-level logger setup
     private static final Logger logger = Logger.getLogger(MyClass.class.getName());
 
-    // This method must exist and be 'static' for MyClass.log() to work
-    public static void log(String result) {
-        logger.info(result);
-    }
-    // 2. Added Overload: Automatically handles naked boolean values (true/false)
-    public static void log(boolean value) {
-        logger.info(String.valueOf(value));
+    /**
+     * Replaces: System.out.println("text");
+     * Usage: MyClass.log("text");
+     */
+    public static void log(String message) {
+        if (logger.isLoggable(Level.INFO)) {
+            logger.info(message);
+        }
     }
 
-    // 3. Pro-Tip Overload: Clean format option to pass anything as a single object
+    /**
+     * Replaces: System.out.println(true);
+     * Usage: MyClass.log(booleanValue);
+     */
+    public static void log(boolean value) {
+        if (logger.isLoggable(Level.INFO)) {
+            logger.info(Boolean.toString(value));
+        }
+    }
+
+    /**
+     * Replaces: System.out.println(myObject);
+     * Usage: MyClass.log(anyObject);
+     */
     public static void log(Object obj) {
-        logger.info(obj == null ? "null" : obj.toString());
+        if (logger.isLoggable(Level.INFO)) {
+            logger.info(String.valueOf(obj));
+        }
     }
 }
+
 
