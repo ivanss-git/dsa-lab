@@ -1,4 +1,5 @@
 package trees;
+import utils.MyClass;
 
 public class BtMaxPathSum {
 
@@ -47,7 +48,7 @@ public class BtMaxPathSum {
 
         int output = btmps.maxPathSum(root);
 
-        System.out.print("Max Path Sum: " + output);
+        MyClass.log("Max Path Sum: " + output);
 
     }
 }

@@ -1,4 +1,5 @@
 package trees;
+import utils.MyClass;
 
 import java.util.HashMap;
 public class ConstructBinaryTreeFromTraversal {
@@ -57,7 +58,7 @@ public class ConstructBinaryTreeFromTraversal {
 
         if (root == null) { return;}
 
-        System.out.print(root.val + " ");
+        MyClass.log(root.val + " ");
         printTree(root.left);
         printTree(root.right);
     }
@@ -68,8 +69,7 @@ public class ConstructBinaryTreeFromTraversal {
         int[] inorder = {2,1,3,4};
         TreeNode output = cbt.buildTree(preorder,inorder);
         
-        System.out.print("Output: ");
+        MyClass.log("Output: ");
         printTree(output);
-        System.out.println();
     }
 }
