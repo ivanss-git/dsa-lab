@@ -3,6 +3,9 @@ package tries;
 import java.util.HashMap;
 import java.util.Map;
 import utils.MyClass;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ImplementTriePrefixTree {
     
@@ -66,21 +69,29 @@ public class ImplementTriePrefixTree {
         }
     }
     public static void main(String[] agrs) {
-        PrefixTree trie = new PrefixTree();
-        trie.insert("dog");
-        trie.insert("cat");
-        MyClass.log("Inserted 'dog' and 'cat'");
+        // 1. Initialize the List to hold the string results
+        List<String> output = new ArrayList<>();
+        
+        // 2. Execute the LeetCode sequence exactly
+        PrefixTree prefixTree = new PrefixTree();
+        output.add("null"); // Creating the tree returns void/null
 
-        boolean hasDog = trie.search("dog");
-        boolean hasCat = trie.search("cat");
-        MyClass.log("Has Dog: " + hasDog);
-        MyClass.log("Has Cat: " + hasCat);
+        prefixTree.insert("dog");
+        output.add("null"); // insert returns void/null
 
-        boolean hasPrefixDo = trie.startsWith("do");
-        boolean hasPrefixCa = trie.startsWith("ca");
-        boolean hasPrefixX = trie.startsWith("x");
-        MyClass.log("Starts with 'do': " + hasPrefixDo); 
-        MyClass.log("Starts with 'ca': " + hasPrefixCa); 
-        MyClass.log("Starts with 'x': " + hasPrefixX); 
+        output.add(String.valueOf(prefixTree.search("dog")));  
+        output.add(String.valueOf(prefixTree.search("do")));    
+        output.add(String.valueOf(prefixTree.startsWith("do"))); 
+
+        prefixTree.insert("do");
+        output.add("null"); 
+
+        output.add(String.valueOf(prefixTree.search("do")));     
+
+        // 3. Convert the List to a final String Array
+        String[] finalArray = output.toArray(new String[0]);
+
+        // 4. Print the final array formatted exactly like the expected Output
+        MyClass.log(Arrays.toString(finalArray));
     }
 }
