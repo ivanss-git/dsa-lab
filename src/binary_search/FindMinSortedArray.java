@@ -1,5 +1,7 @@
 package binary_search;
 
+import utils.MyClass;
+
 public class FindMinSortedArray {
     public class Solution {
         public int findMin(int[] nums) {
@@ -25,7 +27,7 @@ public class FindMinSortedArray {
     public static void main (String[] args) {
         int[] example = {3,4,5,6,1,2};
         FindMinSortedArray msa = new FindMinSortedArray();
-        System.out.print("Output: "+ msa.new Solution().findMin(example));
+        MyClass.log("Output: "+ msa.new Solution().findMin(example));
 
     }
     
